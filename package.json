@@ -1,0 +1,12 @@
+{
+  "name": "qolay-store-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Qolay Store frontend: Uyghur, Arabic and English",
+  "scripts": {
+    "dev": "node tools/serve.mjs",
+    "check": "node tools/check.mjs",
+    "connect": "node tools/configure-backend.mjs"
+  }
+}

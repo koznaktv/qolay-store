@@ -1,0 +1,15 @@
+import path from 'node:path';
+import {copyFile,readFile,writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const value=process.argv[2];
+if(!value)throw Error('Usage: npm run connect -- https://your-backend.example');
+const origin=new URL(value);
+if(origin.protocol!=='https:'||origin.username||origin.password||origin.pathname!=='/'||origin.search||origin.hash||origin.port||origin.hostname==='localhost')throw Error('Provide a public HTTPS origin without a path or credentials.');
+for(const file of ['live-app.js','index.html','styles.css'])await copyFile(path.join(root,'src',file),path.join(root,'public',file));
+await writeFile(path.join(root,'public/connection.json'),JSON.stringify({apiBase:'',mode:'live'})+'\n');
+const config=JSON.parse(await readFile(path.join(root,'vercel.json'),'utf8'));
+config.rewrites=[{source:'/api/store/:path*',destination:origin.origin+'/api/store/:path*'},{source:'/health',destination:origin.origin+'/health'}];
+config.headers.push({source:'/api/store/:path*',headers:[{key:'Cache-Control',value:'private, no-store, max-age=0'},{key:'CDN-Cache-Control',value:'no-store'},{key:'Vercel-CDN-Cache-Control',value:'no-store'}]});
+await writeFile(path.join(root,'vercel.json'),JSON.stringify(config,null,2)+'\n');
+console.log('Frontend configured for '+origin.origin+'. No deployment or bot change was performed.');
