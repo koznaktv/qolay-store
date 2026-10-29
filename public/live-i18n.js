@@ -1,5 +1,13 @@
 import {tr} from './i18n.js';
 const live={
+ lookupTitle:['تېلېگرامما ھېساباتىغا پۇل قاچىلاش','شحن رصيد حساب تيليجرام','Top Up Telegram Account'],
+ lookupDesc:['پۇل قاچىلايدىغان تېلېگرامما ID نومۇرىڭىزنى ياكى @ئىشلەتكۈچى نامىڭىزنى كىرگۈزۈڭ:','أدخل معرف تيليجرام ID أو اسم المستخدم @:','Enter your Telegram ID or @Username:'],
+ lookupPlaceholder:['مەسىلەن: 123456789 ياكى @username','مثال: 123456789 أو @username','e.g. 123456789 or @username'],
+ confirm:['جەزملەش','تأكيد','Confirm'],
+ orLoginBot:['ياكى بىۋاسىتە تېلېگرامما ئارقىلىق كىرىڭ:','أو تسجيل الدخول مباشرة عبر تيليجرام:','Or verify directly with Telegram:'],
+ changeAccount:['باشقا ھېساباتقا ئالماشتۇرۇش','تبديل الحساب','Change Account'],
+ userNotFound:['بۇ تېلېگرامما ھېساباتى تېپىلمىدى. ئالدى بىلەن بوتتا /start نى بېسىڭ.','لم يتم العثور على الحساب. يرجى بدء البوت بـ /start أولاً.','Account not found. Please start the bot first.'],
+
  syriatelOperator:['سۈرىيەتېل','سيريتل','Syriatel'],numberCheck:['نومۇرنى كۆرۈش','معرفة الرقم','Check number'],validityCheck:['سالاھىيەت مۇددىتى','صلاحية الخط','Line validity'],balanceCheck:['قالدۇقنى تەكشۈرۈش','معرفة الرصيد','Check balance'],servicesCheck:['مۇلازىمەتلەر','الخدمات','Services'],enable4g:['4G نى ئېچىش','تفعيل 4G','Enable 4G'],
  websiteBuy:['تور بەتتە سېتىۋېلىش','الشراء من الموقع','Buy on website'],websiteSteps:['تۆۋەندىكى تاللاشلار بىلەن بۇ بەتنىڭ ئىچىدە داۋاملاشتۇرۇڭ.','أكمل الخطوات أدناه داخل هذه الصفحة.','Complete the steps below on this page.'],websitePayments:['پۇل قاچىلاش ئۇسۇلىنى تاللاپ، سومما ۋە دەلىلنى بۇ يەردە يوللاڭ.','اختر طريقة الدفع وأرسل المبلغ والإثبات هنا.','Choose a payment method and submit the amount and proof here.'],receiptPhoto:['تالون سۈرىتى (لازىم بولغاندا)','صورة الإيصال عند الطلب','Receipt image (when requested)'],txidLabel:['تالون ياكى چېك نومۇرى (رقم العملية / TXID)','رقم العملية / رقم الإشعار','Transaction / Operation ID'],txidPlaceholder:['پۇل ئۇرغان تالون ياكى چېك نومۇرىنى كىرگۈزۈڭ','أدخل رقم العملية أو الإشعار','Enter transaction or operation number'],send:['يوللاش','إرسال','Submit'],staleAction:['بۇ تاللاشنىڭ ۋاقتى ئۆتتى؛ ئەڭ ئاخىرقى تاللاشنى ئىشلىتىڭ.','انتهت صلاحية هذا الاختيار؛ استخدم الخيارات الأخيرة.','This choice expired. Use the latest options.'],operationPending:['تەلەپ بىر تەرەپ قىلىنىۋاتىدۇ؛ نەتىجىنى ساقلاڭ.','الطلب قيد المعالجة؛ انتظر النتيجة.','Processing your request. Please wait for the result.'],
  live:['بوتقا ئۇلانغان','متصل بالبوت','Connected to bot'],livePrices:['باھا ۋە قالدۇق بوت بىلەن ئورتاق.','الأسعار والرصيد مشتركان مع البوت.','Prices and balance are shared with the bot.'],
