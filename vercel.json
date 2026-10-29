@@ -23,7 +23,16 @@
       ]
     },
     {
-      "source": "/api/store/:path*",
+      "source": "/api/store/catalog",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=15, s-maxage=60, stale-while-revalidate=300"
+        }
+      ]
+    },
+    {
+      "source": "/api/store/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
