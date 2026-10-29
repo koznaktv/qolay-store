@@ -21,6 +21,33 @@
           "value": "frame-ancestors 'self' https://web.telegram.org https://*.telegram.org"
         }
       ]
+    },
+    {
+      "source": "/api/store/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store, max-age=0"
+        },
+        {
+          "key": "CDN-Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/store/:path*",
+      "destination": "https://qolay-bot.onrender.com/api/store/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://qolay-bot.onrender.com/health"
     }
   ]
 }
